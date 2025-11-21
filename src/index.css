@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* 1. Define the Theme Colors so Tailwind creates the classes (text-bash-yellow, etc.) */
+@theme {
+  --color-bash-bg: #020202;
+  --color-bash-green: #00ff66;
+  --color-bash-yellow: #f2c744;
+  --color-bash-orange: #ff9b4a;
+  --color-bash-cyan: #66d9ef;
+  --color-bash-text: #e6e6e6;
+  --color-bash-border: #e6b800;
+  --color-bash-shadow: #0c0f0c;
+  
+  /* Define the font here too */
+  --font-mono: "Fira Code", monospace;
+}
+
+/* 2. Hardcode the body styles to ensure they NEVER fail */
+body {
+  background-color: #020202; /* Hardcoded Black */
+  color: #00ff66;            /* Hardcoded Green */
+  font-family: "Fira Code", monospace;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #f2c744;
+  color: black;
+}
+
+/* Link Hovers */
+a:hover, button:hover {
+  text-shadow: 0 0 8px #66d9ef;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #020202; }
+::-webkit-scrollbar-thumb { background: #e6b800; border: 2px solid #020202; }
