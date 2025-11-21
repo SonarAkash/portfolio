@@ -1,34 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const Typewriter = ({ text, delay = 50, startDelay = 0 }) => {
+const Typewriter = ({ text, delay = 30, startDelay = 100, showCursor = true}) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [started, setStarted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  // Reference to the element so we can track its position
+  const containerRef = useRef(null);
 
+  // 1. Observer: Only start when the user scrolls to this element
   useEffect(() => {
-    // Delay the start of typing (optional)
-    const startTimeout = setTimeout(() => {
-      setStarted(true);
-    }, startDelay);
-    return () => clearTimeout(startTimeout);
-  }, [startDelay]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true); // It's on screen! Start typing.
+          observer.disconnect(); // Stop observing once started
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the text is visible
+    );
 
-  useEffect(() => {
-    if (started && currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, delay);
-      return () => clearTimeout(timeout);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
-  }, [currentIndex, delay, text, started]);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // 2. Typing Logic: Only runs if isVisible is TRUE
+  useEffect(() => {
+    if (!isVisible) return;
+    if (currentIndex >= text.length) return;
+
+    const timeout = setTimeout(() => {
+      setCurrentText(prev => prev + text[currentIndex]);
+      setCurrentIndex(prev => prev + 1);
+    }, currentIndex === 0 ? startDelay : delay);
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex, text, delay, startDelay, isVisible]);
 
   return (
-    <span>
+    <span ref={containerRef} className="inline-block font-mono">
       {currentText}
-      {/* Blinking Cursor only shows while typing */}
-      {currentIndex < text.length && (
-        <span className="border-r-2 border-dracula-pink animate-pulse ml-1"></span>
+      {/* Only show cursor if showCursor is true */}
+      {showCursor && (
+        <span 
+          className="ml-1 animate-pulse inline-block"
+          style={{ color: '#00ff66', fontWeight: 'bold' }}
+        >
+          ▋
+        </span>
       )}
     </span>
   );
