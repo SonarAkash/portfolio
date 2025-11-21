@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Typewriter from './components/Typewriter';
 
+
 function App() {
   const [activeTab, setActiveTab] = useState('home');
 
   return (
     <div className="min-h-screen p-4 sm:p-8 max-w-5xl mx-auto flex flex-col font-mono text-sm sm:text-base selection:bg-bash-yellow selection:text-black">
 
-      {/* --- TOP NAVBAR --- */}
       <nav className="flex justify-between items-center mb-12 select-none">
         <div className="flex gap-6 sm:gap-10">
           <button
@@ -32,21 +32,17 @@ function App() {
       </nav>
 
 
-      {/* --- MAIN CONTENT --- */}
       <main className="flex-1">
 
-        {/* === HOME TAB === */}
         {activeTab === 'home' && (
           <div className="space-y-8 animate-fadeIn">
 
             {/* Header Command */}
             <div className="text-xl sm:text-2xl font-bold text-bash-green">
               <span className="text-bash-text mr-2">&gt;</span>
-              {/* Pass the text you want typed as a prop */}
               <Typewriter text="akash.sh" delay={70} />
             </div>
 
-            {/* INTRO TEXT */}
             <div className="max-w-2xl text-bash-text leading-relaxed">
               <p className="mb-4">
                 <span className="text-bash-green font-bold">
@@ -59,34 +55,28 @@ function App() {
               </p>
             </div>
 
-            {/* "CURL" Output Box */}
             <div className="mt-12">
               <div className="text-bash-text mb-2 text-xs sm:text-sm opacity-70">
                 $ <span className="text-bash-green">curl</span> akash.sh/mission
               </div>
 
               <div className="border border-bash-green p-6 sm:p-10 relative bg-[#0c0f0c]">
-                {/* Decor: Corner squares */}
                 <div className="absolute top-0 left-0 w-2 h-2 bg-bash-green"></div>
                 <div className="absolute top-0 right-0 w-2 h-2 bg-bash-green"></div>
                 <div className="absolute bottom-0 left-0 w-2 h-2 bg-bash-green"></div>
                 <div className="absolute bottom-0 right-0 w-2 h-2 bg-bash-green"></div>
 
-                {/* BIG HEADER */}
                 <div className="mb-8 font-black text-4xl sm:text-6xl text-bash-yellow tracking-tighter leading-none">
-                  {/* Line 1: Starts immediately (after 100ms) */}
-                  <Typewriter text="BUILT TO" delay={70} startDelay={100} showCursor={false}/>
+                  <Typewriter text="BUILT TO" delay={70} startDelay={100} showCursor={false} />
 
                   <br />
 
-                  {/* Line 2: Green text. Starts after Line 1 finishes (approx 800ms buffer) */}
                   <span className="text-bash-green">
                     <Typewriter text="SCALE" delay={70} startDelay={800} />
                   </span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Tech Stack Column (Updated with your skills) */}
                   <div>
                     <h3 className="text-bash-yellow border-b border-bash-text/20 pb-1 mb-3 inline-block font-bold">--tech_stack--</h3>
                     <ul className="text-bash-text text-sm space-y-2 font-mono">
@@ -100,12 +90,11 @@ function App() {
                         <span className="text-bash-green font-bold">&gt; Database:</span> PostgreSQL, MySQL, MongoDB
                       </li>
                       <li>
-                        <span className="text-bash-green font-bold">&gt; Infra:</span> Docker, WebSockets, AWS
+                        <span className="text-bash-green font-bold">&gt; Infra:</span> Docker, WebSockets, GCP
                       </li>
                     </ul>
                   </div>
 
-                  {/* Connect Column */}
                   <div>
                     <h3 className="text-bash-yellow border-b border-bash-text/20 pb-1 mb-3 inline-block font-bold">--connect--</h3>
                     <div className="flex flex-col gap-2 text-sm">
@@ -118,14 +107,10 @@ function App() {
                       <a href="https://leetcode.com/Akash_Sonar/" target="_blank" className="text-bash-cyan hover:underline">
                         LeetCode (1600 Rating)
                       </a>
-                      <a href="mailto:akashsonar.9113@gmail.com" className="text-bash-cyan hover:underline">
-                        Email
-                      </a>
                     </div>
                   </div>
                 </div>
 
-                {/* Footer Links */}
                 <div className="mt-12 pt-4 border-t border-dashed border-bash-text/20 text-xs text-bash-text font-mono">
                   <button
                     onClick={() => setActiveTab('projects')}
@@ -152,7 +137,6 @@ function App() {
           </div>
         )}
 
-        {/* === PROJECTS TAB === */}
         {activeTab === 'projects' && (
           <div className="space-y-6 animate-fadeIn">
             <div className="text-xl sm:text-2xl font-bold text-bash-green">
@@ -165,7 +149,6 @@ function App() {
             </div>
 
             <div className="border border-bash-border overflow-hidden">
-              {/* Table Header */}
               <div className="grid grid-cols-12 border-b border-bash-border bg-[#111] text-bash-yellow font-bold text-xs sm:text-sm uppercase tracking-wider">
                 <div className="col-span-1 p-3 text-center border-r border-bash-border hidden sm:block">ID</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-border">Project</div>
@@ -173,7 +156,6 @@ function App() {
                 <div className="col-span-12 sm:col-span-2 p-3 text-center">Links</div>
               </div>
 
-              {/* Project 1: Log Management */}
               <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">01</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-bold text-bash-green">
@@ -190,7 +172,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Project 2: Blog Platform */}
               <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">02</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-bold text-bash-green">
@@ -205,7 +186,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Project 3: FreeFlow */}
               <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">03</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-medium text-bash-green/90">
@@ -222,7 +202,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Project 4: Gmail AI */}
               <div className="grid grid-cols-12 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">04</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-medium text-bash-green/90">
@@ -242,7 +221,6 @@ function App() {
         )}
 
 
-        {/* === CONTACT TAB (Renamed from Resources) === */}
         {activeTab === 'contact' && (
           <div className="space-y-8 animate-fadeIn">
             <div className="text-xl sm:text-2xl font-bold text-bash-green">
@@ -258,7 +236,6 @@ function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-              {/* Column 1: Direct Contact */}
               <div>
                 <h3 className="text-xl text-bash-yellow mb-4 font-bold border-b border-bash-text/20 pb-2 inline-block">Direct Channels</h3>
                 <div className="space-y-4">
@@ -273,7 +250,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Column 2: Profiles */}
               <div>
                 <h3 className="text-xl text-bash-yellow mb-4 font-bold border-b border-bash-text/20 pb-2 inline-block">Coding Profiles</h3>
                 <ul className="space-y-3">
@@ -292,7 +268,13 @@ function App() {
                 </ul>
 
                 <div className="mt-8 pt-6 border-t border-bash-text/10">
-                  <a href="/Akash_Resume.pdf" download className="inline-flex items-center gap-2 border border-bash-green text-bash-green px-6 py-3 hover:bg-bash-green hover:text-black transition-colors font-bold">
+                  <a
+                    href="/resume.pdf"
+                    download="Akash_Sonar_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 border border-bash-green..."
+                  >
                     <span>$</span> download_resume.sh
                   </a>
                 </div>
@@ -305,7 +287,6 @@ function App() {
 
       </main>
 
-      {/* FOOTER */}
       <footer className="mt-20 text-center text-xs text-bash-text pb-8 opacity-50">
         <p>Built with React + Tailwind v4</p>
         <p>&copy; Akash Sonar 2025</p>
