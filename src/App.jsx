@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Typewriter from './components/Typewriter';
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
@@ -291,6 +292,8 @@ function App() {
         <p>Built with React + Tailwind v4</p>
         <p>&copy; Akash Sonar 2025</p>
       </footer>
+
+      <Analytics />
 
     </div>
   );
