@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { Analytics } from "@vercel/analytics/react";
+import { useState } from 'react';
 import Typewriter from './components/Typewriter';
-import { Analytics } from "@vercel/analytics/react"
-
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -9,6 +8,7 @@ function App() {
   return (
     <div className="min-h-screen p-4 sm:p-8 max-w-5xl mx-auto flex flex-col font-mono text-sm sm:text-base selection:bg-bash-yellow selection:text-black">
 
+      {/* --- TOP NAVBAR --- */}
       <nav className="flex justify-between items-center mb-12 select-none">
         <div className="flex gap-6 sm:gap-10">
           <button
@@ -33,8 +33,10 @@ function App() {
       </nav>
 
 
+      {/* --- MAIN CONTENT --- */}
       <main className="flex-1">
 
+        {/* === HOME TAB === */}
         {activeTab === 'home' && (
           <div className="space-y-8 animate-fadeIn">
 
@@ -44,6 +46,7 @@ function App() {
               <Typewriter text="akash.sh" delay={70} />
             </div>
 
+            {/* INTRO TEXT - UPDATED: Honest Software Developer Persona */}
             <div className="max-w-2xl text-bash-text leading-relaxed">
               <p className="mb-4">
                 <span className="text-bash-green font-bold">
@@ -51,38 +54,44 @@ function App() {
                 </span>
               </p>
               <p>
-                I engineer the <span className="text-bash-text border-b border-bash-yellow">invisible infrastructure</span> that powers modern apps.
-                While others focus on the interface, I focus on the engine—scalability, security, and speed.
+                I am a <span className="text-bash-text border-b border-bash-yellow">Software Developer</span> focused on building efficient applications. 
+                I develop robust backends using <strong>Java & Spring Boot</strong> and flexible solutions with <strong>Node.js & Express</strong>, while managing the frontend with HTML & CSS.
               </p>
             </div>
 
+            {/* "CURL" Output Box */}
             <div className="mt-12">
               <div className="text-bash-text mb-2 text-xs sm:text-sm opacity-70">
-                $ <span className="text-bash-green">curl</span> akash.sh/mission
+                {/* Updated Command */}
+                $ <span className="text-bash-green">curl</span> akash.sh/skills
               </div>
 
               <div className="border border-bash-green p-6 sm:p-10 relative bg-[#0c0f0c]">
+                {/* Decor: Corner squares */}
                 <div className="absolute top-0 left-0 w-2 h-2 bg-bash-green"></div>
                 <div className="absolute top-0 right-0 w-2 h-2 bg-bash-green"></div>
                 <div className="absolute bottom-0 left-0 w-2 h-2 bg-bash-green"></div>
                 <div className="absolute bottom-0 right-0 w-2 h-2 bg-bash-green"></div>
 
+                {/* BIG HEADER - KEPT "BUILT TO SCALE" */}
                 <div className="mb-8 font-black text-4xl sm:text-6xl text-bash-yellow tracking-tighter leading-none">
                   <Typewriter text="BUILT TO" delay={70} startDelay={100} showCursor={false} />
-
                   <br />
-
                   <span className="text-bash-green">
                     <Typewriter text="SCALE" delay={70} startDelay={800} />
                   </span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Tech Stack Column - UPDATED TO MATCH RESUME EXACTLY */}
                   <div>
                     <h3 className="text-bash-yellow border-b border-bash-text/20 pb-1 mb-3 inline-block font-bold">--tech_stack--</h3>
                     <ul className="text-bash-text text-sm space-y-2 font-mono">
                       <li>
                         <span className="text-bash-green font-bold">&gt; Languages:</span> Java, JavaScript
+                      </li>
+                      <li>
+                        <span className="text-bash-green font-bold">&gt; Frontend:</span> HTML, CSS
                       </li>
                       <li>
                         <span className="text-bash-green font-bold">&gt; Backend:</span> Spring Boot, Node.js, Express
@@ -91,11 +100,12 @@ function App() {
                         <span className="text-bash-green font-bold">&gt; Database:</span> PostgreSQL, MySQL, MongoDB
                       </li>
                       <li>
-                        <span className="text-bash-green font-bold">&gt; Infra:</span> Docker, WebSockets, GCP
+                        <span className="text-bash-green font-bold">&gt; Tools:</span> Docker, Git, GitHub
                       </li>
                     </ul>
                   </div>
 
+                  {/* Connect Column */}
                   <div>
                     <h3 className="text-bash-yellow border-b border-bash-text/20 pb-1 mb-3 inline-block font-bold">--connect--</h3>
                     <div className="flex flex-col gap-2 text-sm">
@@ -112,6 +122,7 @@ function App() {
                   </div>
                 </div>
 
+                {/* Footer Links */}
                 <div className="mt-12 pt-4 border-t border-dashed border-bash-text/20 text-xs text-bash-text font-mono">
                   <button
                     onClick={() => setActiveTab('projects')}
@@ -138,6 +149,7 @@ function App() {
           </div>
         )}
 
+        {/* === PROJECTS TAB === */}
         {activeTab === 'projects' && (
           <div className="space-y-6 animate-fadeIn">
             <div className="text-xl sm:text-2xl font-bold text-bash-green">
@@ -150,6 +162,7 @@ function App() {
             </div>
 
             <div className="border border-bash-border overflow-hidden">
+              {/* Table Header */}
               <div className="grid grid-cols-12 border-b border-bash-border bg-[#111] text-bash-yellow font-bold text-xs sm:text-sm uppercase tracking-wider">
                 <div className="col-span-1 p-3 text-center border-r border-bash-border hidden sm:block">ID</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-border">Project</div>
@@ -157,6 +170,7 @@ function App() {
                 <div className="col-span-12 sm:col-span-2 p-3 text-center">Links</div>
               </div>
 
+              {/* Project 1 */}
               <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">01</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-bold text-bash-green">
@@ -173,6 +187,7 @@ function App() {
                 </div>
               </div>
 
+              {/* Project 2 */}
               <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">02</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-bold text-bash-green">
@@ -187,6 +202,7 @@ function App() {
                 </div>
               </div>
 
+              {/* Project 3 */}
               <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">03</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-medium text-bash-green/90">
@@ -203,6 +219,7 @@ function App() {
                 </div>
               </div>
 
+              {/* Project 4 */}
               <div className="grid grid-cols-12 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">04</div>
                 <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-medium text-bash-green/90">
@@ -222,6 +239,7 @@ function App() {
         )}
 
 
+        {/* === CONTACT TAB === */}
         {activeTab === 'contact' && (
           <div className="space-y-8 animate-fadeIn">
             <div className="text-xl sm:text-2xl font-bold text-bash-green">
@@ -237,6 +255,7 @@ function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
+              {/* Direct Channels */}
               <div>
                 <h3 className="text-xl text-bash-yellow mb-4 font-bold border-b border-bash-text/20 pb-2 inline-block">Direct Channels</h3>
                 <div className="space-y-4">
@@ -251,6 +270,7 @@ function App() {
                 </div>
               </div>
 
+              {/* Profiles */}
               <div>
                 <h3 className="text-xl text-bash-yellow mb-4 font-bold border-b border-bash-text/20 pb-2 inline-block">Coding Profiles</h3>
                 <ul className="space-y-3">
@@ -274,7 +294,7 @@ function App() {
                     download="Akash_Sonar_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-bash-green..."
+                    className="inline-flex items-center gap-2 border border-bash-green text-bash-green px-6 py-3 hover:bg-bash-green hover:text-black transition-colors font-bold"
                   >
                     <span>$</span> download_resume.sh
                   </a>
@@ -288,11 +308,13 @@ function App() {
 
       </main>
 
+      {/* FOOTER */}
       <footer className="mt-20 text-center text-xs text-bash-text pb-8 opacity-50">
         <p>Built with React + Tailwind v4</p>
         <p>&copy; Akash Sonar 2025</p>
       </footer>
 
+      {/* VERCEL ANALYTICS */}
       <Analytics />
 
     </div>
