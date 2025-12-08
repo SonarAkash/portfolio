@@ -249,7 +249,8 @@ function App() {
 
             <div className="text-bash-text">
               <p>
-                I am currently open to <span className="text-bash-yellow">Internship</span> and <span className="text-bash-yellow">Full-time</span> opportunities.
+                {/* I am currently open to <span className="text-bash-yellow">Internship</span> and <span className="text-bash-yellow">Full-time</span> opportunities. */}
+                I am currently available for <span className="text-bash-yellow">Full-time opportunities</span> and <span className="text-bash-yellow">Freelance projects</span>.
               </p>
             </div>
 
