@@ -54,7 +54,7 @@ function App() {
                 </span>
               </p>
               <p>
-                I am a <span className="text-bash-text border-b border-bash-yellow">Software Developer</span> focused on building efficient applications. 
+                I am a <span className="text-bash-text border-b border-bash-yellow">Software Developer</span> focused on building efficient applications.
                 I develop robust backends using <strong>Java & Spring Boot</strong> and flexible solutions with <strong>Node.js & Express</strong>, while managing the frontend with HTML & CSS.
               </p>
             </div>
@@ -87,20 +87,38 @@ function App() {
                   <div>
                     <h3 className="text-bash-yellow border-b border-bash-text/20 pb-1 mb-3 inline-block font-bold">--tech_stack--</h3>
                     <ul className="text-bash-text text-sm space-y-2 font-mono">
-                      <li>
-                        <span className="text-bash-green font-bold">&gt; Languages:</span> Java, JavaScript
+                      {/* Languages */}
+                      <li className="flex items-start">
+                        <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Languages:</span>
+                        <span>Java, JavaScript, Python</span>
                       </li>
-                      <li>
-                        <span className="text-bash-green font-bold">&gt; Frontend:</span> HTML, CSS
+
+                      {/* Frontend */}
+                      <li className="flex items-start">
+                        <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Frontend:</span>
+                        <span>HTML, CSS</span>
                       </li>
-                      <li>
-                        <span className="text-bash-green font-bold">&gt; Backend:</span> Spring Boot, Node.js, Express
+
+                      {/* Backend - Now formatted nicely with Flexbox */}
+                      <li className="flex items-start">
+                        <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Backend:</span>
+                        <span className="leading-snug">
+                          Spring Boot, Hibernate ORM,<br />
+                          Node.js, Express.js,<br />
+                           RESTful APIs, WebSockets
+                        </span>
                       </li>
-                      <li>
-                        <span className="text-bash-green font-bold">&gt; Database:</span> PostgreSQL, MySQL, MongoDB
+
+                      {/* Database */}
+                      <li className="flex items-start">
+                        <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Database:</span>
+                        <span>PostgreSQL, MySQL, MongoDB</span>
                       </li>
-                      <li>
-                        <span className="text-bash-green font-bold">&gt; Tools:</span> Docker, Git, GitHub
+
+                      {/* Tools */}
+                      <li className="flex items-start">
+                        <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Tools:</span>
+                        <span>Git/GitHub, Docker, Linux/Unix</span>
                       </li>
                     </ul>
                   </div>
@@ -116,7 +134,7 @@ function App() {
                         LinkedIn
                       </a>
                       <a href="https://leetcode.com/Akash_Sonar/" target="_blank" className="text-bash-cyan hover:underline">
-                        LeetCode (1600 Rating)
+                        LeetCode (1600 Rating | DSA)
                       </a>
                     </div>
                   </div>
