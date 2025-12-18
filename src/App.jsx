@@ -103,10 +103,16 @@ function App() {
                       <li className="flex items-start">
                         <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Backend:</span>
                         <span className="leading-snug">
-                          Spring Boot, Hibernate ORM,<br />
+                          Spring Boot, Hibernate,<br />
                           Node.js, Express.js,<br />
                            RESTful APIs, WebSockets
                         </span>
+                      </li>
+
+                      {/* Security  */}
+                      <li className="flex items-start">
+                        <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Security:</span>
+                        <span>Spring Security, JWT</span>
                       </li>
 
                       {/* Database */}
