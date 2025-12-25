@@ -55,7 +55,7 @@ function App() {
               </p>
               <p>
                 I am a <span className="text-bash-text border-b border-bash-yellow">Software Developer</span> focused on building efficient applications.
-                I develop robust backends using <strong>Java & Spring Boot</strong> and flexible solutions with <strong>Node.js & Express</strong>, while managing the frontend with HTML & CSS.
+                I develop robust backends using <strong>Java & Spring Boot</strong> and flexible solutions with <strong>Node.js & Express</strong>, while crafting modern user interfaces with React.js.
               </p>
             </div>
 
@@ -90,13 +90,14 @@ function App() {
                       {/* Languages */}
                       <li className="flex items-start">
                         <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Languages:</span>
-                        <span>Java, JavaScript, Python</span>
+                        <span>Java, JavaScript, Python,<br />
+                         Bash (Shell Scripting)</span>
                       </li>
 
                       {/* Frontend */}
                       <li className="flex items-start">
                         <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Frontend:</span>
-                        <span>HTML, CSS</span>
+                        <span>React.js, HTML, CSS</span>
                       </li>
 
                       {/* Backend - Now formatted nicely with Flexbox */}
