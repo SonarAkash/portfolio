@@ -54,8 +54,8 @@ function App() {
                 </span>
               </p>
               <p>
-                I am a <span className="text-bash-text border-b border-bash-yellow">Software Developer</span> focused on building efficient applications.
-                I develop robust backends using <strong>Java & Spring Boot</strong> and flexible solutions with <strong>Node.js & Express</strong>, while crafting modern user interfaces with React.js.
+                I am a <span className="text-bash-text border-b border-bash-yellow">Software Developer</span> and <span className="text-bash-text border-b border-bash-yellow">SWE Intern at Joylane</span>, focused on building efficient applications.
+                Joylane is building <strong>video commerce in India</strong>—live and shoppable video. I work with <strong>TypeScript</strong>, <strong>GraphQL</strong>, <strong>PostgreSQL</strong>, and <strong>React Native</strong>, and also build backends with Java/Spring Boot and Node.js, with modern UIs in React.js.
               </p>
             </div>
 
@@ -83,34 +83,34 @@ function App() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Tech Stack Column - UPDATED TO MATCH RESUME EXACTLY */}
+                  {/* Tech Stack Column - UPDATED: Joylane stack + broader skills */}
                   <div>
                     <h3 className="text-bash-yellow border-b border-bash-text/20 pb-1 mb-3 inline-block font-bold">--tech_stack--</h3>
                     <ul className="text-bash-text text-sm space-y-2 font-mono">
                       {/* Languages */}
                       <li className="flex items-start">
                         <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Languages:</span>
-                        <span>Java, JavaScript, Python,<br />
-                         Bash (Shell Scripting)</span>
+                        <span>TypeScript, JavaScript, Java,<br />
+                         Python, Bash (Shell Scripting)</span>
                       </li>
 
                       {/* Frontend */}
                       <li className="flex items-start">
                         <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Frontend:</span>
-                        <span>React.js, HTML, CSS</span>
+                        <span>React.js, React Native, HTML, CSS</span>
                       </li>
 
-                      {/* Backend - Now formatted nicely with Flexbox */}
+                      {/* Backend / API */}
                       <li className="flex items-start">
                         <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Backend:</span>
                         <span className="leading-snug">
-                          Spring Boot, Hibernate,<br />
+                          GraphQL, Spring Boot, Hibernate,<br />
                           Node.js, Express.js,<br />
-                           RESTful APIs, WebSockets
+                          RESTful APIs, WebSockets
                         </span>
                       </li>
 
-                      {/* Security  */}
+                      {/* Security */}
                       <li className="flex items-start">
                         <span className="text-bash-green font-bold shrink-0 mr-2">&gt; Security:</span>
                         <span>Spring Security, JWT</span>
@@ -195,6 +195,21 @@ function App() {
                 <div className="col-span-12 sm:col-span-2 p-3 text-center">Links</div>
               </div>
 
+              {/* Experience: Joylane */}
+              <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group bg-bash-green/5">
+                <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-yellow hidden sm:block font-bold">—</div>
+                <div className="col-span-12 sm:col-span-4 p-3 border-r border-bash-text/10 font-bold text-bash-yellow">
+                  Joylane · SWE Intern
+                  <div className="mt-1 text-xs text-bash-orange font-normal opacity-90">[TypeScript, GraphQL, PostgreSQL, React Native]</div>
+                </div>
+                <div className="col-span-12 sm:col-span-5 p-3 border-r border-bash-text/10 text-bash-text group-hover:text-white">
+                  Building video commerce in India—live and shoppable video.
+                </div>
+                <div className="col-span-12 sm:col-span-2 p-3 flex items-center justify-center gap-2 text-bash-text/50 italic">
+                  current
+                </div>
+              </div>
+
               {/* Project 1 */}
               <div className="grid grid-cols-12 border-b border-bash-text/10 hover:bg-bash-green/5 transition-colors text-xs sm:text-sm group">
                 <div className="col-span-1 p-3 text-center border-r border-bash-text/10 text-bash-text/50 hidden sm:block group-hover:text-white">01</div>
@@ -274,8 +289,7 @@ function App() {
 
             <div className="text-bash-text">
               <p>
-                {/* I am currently open to <span className="text-bash-yellow">Internship</span> and <span className="text-bash-yellow">Full-time</span> opportunities. */}
-                I am currently available for <span className="text-bash-yellow">Full-time opportunities</span> and <span className="text-bash-yellow">Freelance projects</span>.
+                Currently <span className="text-bash-yellow">SWE Intern at Joylane</span> (video commerce). Open to <span className="text-bash-yellow">Full-time opportunities</span>.
               </p>
             </div>
 
