@@ -530,7 +530,7 @@ function App() {
       {/* FOOTER */}
       <footer className="mt-20 text-center text-xs text-bash-text pb-8 opacity-50">
         <p>Built with React + Tailwind v4</p>
-        <p>&copy; Akash Sonar 2025</p>
+        <p>&copy; Akash Sonar 2026</p>
       </footer>
 
       {/* VERCEL ANALYTICS */}
