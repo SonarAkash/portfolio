@@ -76,8 +76,8 @@ function App() {
                 I build scalable backend services with{" "}
                 <strong>Java/Spring Boot</strong>, <strong>GraphQL APIs</strong>
                 , and <strong>PostgreSQL</strong> databases. I deploy
-                applications on <strong>Google Cloud Platform</strong>{" "}
-                (Compute Engine Linux VMs) using <strong>Docker</strong>{" "}
+                applications on <strong>Google Cloud Platform</strong> (Compute
+                Engine Linux VMs) using <strong>Docker</strong>{" "}
                 containerization.
               </p>
               <p>
@@ -327,14 +327,6 @@ function App() {
                   >
                     repo
                   </a>
-                  <span className="text-bash-text/30">|</span>
-                  <a
-                    href="https://logflux.tech"
-                    target="_blank"
-                    className="text-bash-cyan hover:underline decoration-2"
-                  >
-                    live
-                  </a>
                 </div>
               </div>
 
@@ -386,14 +378,6 @@ function App() {
                     className="text-bash-cyan hover:underline decoration-2"
                   >
                     repo
-                  </a>
-                  <span className="text-bash-text/30">|</span>
-                  <a
-                    href="https://freeflow-saas.vercel.app/"
-                    target="_blank"
-                    className="text-bash-cyan hover:underline decoration-2"
-                  >
-                    live
                   </a>
                 </div>
               </div>
@@ -493,7 +477,7 @@ function App() {
                     >
                       LeetCode{" "}
                       <span className="text-bash-orange ml-2">
-                        [Rating: 1600]
+                        [Rating: 1600+]
                       </span>
                     </a>
                   </li>
@@ -530,7 +514,8 @@ function App() {
       {/* FOOTER */}
       <footer className="mt-20 text-center text-xs text-bash-text pb-8 opacity-50">
         <p>Built with React + Tailwind v4</p>
-        <p>&copy; Akash Sonar 2026</p>
+
+        <p>&copy; Akash Sonar {new Date().getFullYear()}</p>
       </footer>
 
       {/* VERCEL ANALYTICS */}
